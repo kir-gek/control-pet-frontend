@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order{
+    width: 30%;
+}
+
+.animal{
+    width: 30%;
+}
+
+.owner{
+    width: 30%;
+}

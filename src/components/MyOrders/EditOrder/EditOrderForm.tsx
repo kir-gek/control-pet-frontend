@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store/store";
 import { editOrder } from "../../../store/myOrdersSlice";
 import { OrderModel } from "../../../types/Order";
+import { OrderForm } from "../OrderForm/OrderForm";
 
 interface NewOrderFormProps {
   order: OrderModel;
@@ -64,80 +65,6 @@ export const EditOrderForm = ({ order, setActive }: NewOrderFormProps) => {
   };
 
   return (
-    <form>
-      <label>
-        Имя:
-        <input
-          type="text"
-          name="name"
-          value={newOrder.name}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Дата поступления:
-        <input
-          type="text"
-          name="dateIn"
-          value={newOrder.dateIn}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Пол животного:
-        <select name="gender" value={newOrder.gender} onChange={handleChange}>
-          <option value="0">Женский</option>
-          <option value="1">Мужской</option>
-        </select>
-      </label>
-      <label>
-        Возраст:
-        <input
-          type="number"
-          name="age"
-          value={newOrder.age}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Порода:
-        <input
-          type="text"
-          name="breed"
-          value={newOrder.breed}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Владелец (ФИО):
-        <input
-          type="text"
-          name="ownerFIO"
-          value={newOrder.ownerFIO}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Телефон:
-        <input
-          type="text"
-          name="phone"
-          value={newOrder.phone}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Адрес:
-        <input
-          type="text"
-          name="address"
-          value={newOrder.address}
-          onChange={handleChange}
-        />
-      </label>
-      <button type="button" onClick={editOrderClick}>
-        Сохранить{" "}
-      </button>
-    </form>
+   <OrderForm newOrder={newOrder} handleChange={handleChange} addOrderClick={editOrderClick}/>
   );
 };

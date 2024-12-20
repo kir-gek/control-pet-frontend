@@ -3,15 +3,15 @@ export interface OrderModel {
     dateIn: string;
     dateOut: string;
     price: number;
-    noteOrder: string | null;
+    noteOrder: string;
     name: string;
     age: number;
     gender: number;
     type: string;
     breed: string;
-    notePet: string | null;
+    notePet: string;
     ownerFIO: string;
     phone: string;
     address: string;
-    noteOwner: string | null;
+    noteOwner: string;
 }
